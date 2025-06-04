@@ -11,7 +11,7 @@ const useLoggedinuser = () => {
 
     const fetchUser = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/loggedinuser?email=${email}`);
+        const response = await fetch(`https://ev-charger-station.onrender.com/loggedinuser?email=${email}`);
         const data = await response.json();
         // Assuming data is an array, take the first user
         setLoggedinuser(data[0] || {});
