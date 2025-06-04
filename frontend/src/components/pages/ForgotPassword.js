@@ -56,7 +56,7 @@ const ForgotPassword = () => {
       // Send password reset email
       const auth = getAuth();
       await sendPasswordResetEmail(auth, email, {
-        url: "http://localhost:3000/login",
+        url: "https://evchargerstation.vercel.app/login",
         handleCodeInApp: true // This makes the link open in your app
       });
 
