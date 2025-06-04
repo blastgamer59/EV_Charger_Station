@@ -27,7 +27,7 @@ export const StationsProvider = ({ children }) => {
   const fetchStations = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/stations/mongodb');
+      const res = await fetch('https://ev-charger-station.onrender.com/api/stations/mongodb');
       if (!res.ok) throw new Error(`Failed to fetch stations: ${res.status}`);
       const data = await res.json();
       const parsedData = data.map(station => ({
@@ -90,7 +90,7 @@ export const StationsProvider = ({ children }) => {
 
   const addStation = async (station) => {
     try {
-      const res = await fetch('http://localhost:5000/api/stations', {
+      const res = await fetch('https://ev-charger-station.onrender.com/api/stations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -128,7 +128,7 @@ export const StationsProvider = ({ children }) => {
     try {
       const { _id, ...stationWithoutId } = updatedStation;
       
-      const res = await fetch(`http://localhost:5000/api/stations/${updatedStation.id}`, {
+      const res = await fetch(`https://ev-charger-station.onrender.com/api/stations/${updatedStation.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -164,7 +164,7 @@ export const StationsProvider = ({ children }) => {
 
   const deleteStation = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/stations/${id}`, {
+      const res = await fetch(`https://ev-charger-station.onrender.com/api/stations/${id}`, {
         method: 'DELETE',
       });
 
