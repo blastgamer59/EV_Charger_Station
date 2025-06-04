@@ -75,7 +75,7 @@ const Register = () => {
       await signUp(formData.email, formData.password);
 
       // Step 2: Send user data to MongoDB
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch("https://ev-charger-station.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

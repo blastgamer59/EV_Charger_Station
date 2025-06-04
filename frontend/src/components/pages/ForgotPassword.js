@@ -37,7 +37,7 @@ const ForgotPassword = () => {
 
     try {
       // Check if email is registered
-      const response = await fetch("http://localhost:5000/check-email", {
+      const response = await fetch("https://ev-charger-station.onrender.com/check-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
